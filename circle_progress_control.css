@@ -1,0 +1,350 @@
+.container {
+    --degPlay: 270deg;
+    --degBell: 270deg;
+    --deg: 270deg;
+    --move: 533.8;
+    height: 650px;
+    width: 310px;
+    border: 1px solid rgba(231, 236, 254, 0.89);
+    border-radius: 1rem;
+    background-color: rgba(231, 236, 254, 0.89);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    position: relative;
+}
+.header .head {
+    color: rgb(67, 63, 63);
+}
+.header .head span {
+    margin-right: 5px;
+}
+
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.title h1, a {
+    text-decoration: none;
+    color: rgb(11, 11, 104);
+}
+.title h1 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.title .button {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0.1px 0.1px 10px rgba(0, 0, 5, 0.1);
+    border-radius: 0.3rem;
+    border-color: transparent;
+}
+
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+svg {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+}
+svg circle {
+    stroke-width: 25px;
+    fill: white;
+}
+.under {
+    stroke: #e6e6e6;
+}
+.above {
+    stroke: rgb(11, 11, 104);
+    fill: none;
+    stroke-dasharray: 533.8;
+    stroke-dashoffset: var(--move);
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(var(--deg));
+}
+.play {
+    transform-origin: center;
+    /* transform: rotate(var(--degPlay)); */
+    fill: none;
+}
+.bell {
+    transform-origin: center;
+    transform: rotate(var(--degBell));
+    fill: rgba(252, 250, 250);
+}
+svg .numHour {
+    fill: gray;
+    font-size: 12px;
+}
+svg .hour {
+    font-size: 40px;
+    fill: rgb(11, 11, 104);
+    font-weight: 500;
+}
+svg .min {
+    font-size: 20px;
+    fill: gray;
+}
+
+
+.display {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 20px 20px 20px;
+}
+.display .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    width: 110px;
+    border-radius: 1rem;
+    box-shadow: 0.1px 0.1px 10px whitesmoke;
+}
+.display .box1 {
+    background-color: white;
+    box-shadow: 0.1px 0.1px 10px rgba(0, 0, 5, 0.1);
+    width: 120px;
+} 
+.display .box2 {
+    background-color: rgb(11, 11, 104);
+    box-shadow: 0.1px 0.1px 10px rgba(0, 0, 5, 0.1); 
+    width: 120px;
+} 
+.display .box .text {
+    color: gray;
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.display .box .time {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.display .box .bedtime {
+    color: rgb(11, 11, 104);
+}
+.display .box .wakeup {
+    color: white;
+    font-weight: 500;
+}
+
+.display .box2 .text {
+    color: rgb(220, 220, 220);
+} 
+
+.music {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    width: 254px;
+}
+
+/* -------------------------- noti -------------------------- */
+
+@keyframes floatDown {
+    from { 
+        opacity: 0.2;
+        top: -50px;
+    } to {
+        opacity: 0.8;
+        top: 10px;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.noti {
+    height: 90px;
+    width: 96%;
+    background-color: white;
+    /* opacity: 0.5; */
+    position: absolute;
+    /* display: block; */
+    z-index: 2;
+    margin-left: 6px;
+    border-radius: 8px;
+    overflow: hidden;
+    /* animation: floatDown ease 1s; */
+    top: 10px;
+    display: none;
+}
+
+.noti_header {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 10px 0; */
+    font-size: 13px;
+    background-color: rgb(11, 11, 104);
+    padding: 10px 0;
+    color: white;
+}
+
+.noti_header_check {
+    display: flex;
+}
+
+.noti_header_check i{
+    margin: 0 10px;
+}
+
+.noti_header_time {
+    margin-right: 10px;
+}
+
+.noti_infor {
+    margin: 10px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+}
+
+.noti_infor_logo {
+    font-size: 25px;
+    margin-right: 10px;
+    color: rgb(11, 11, 104);
+}
+
+/* ------------------- Music Player----------------------- */
+
+
+.music-container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgba(11, 11, 104, 0.2);
+    display: flex;
+    padding: 20px 10px;
+    position: relative;
+    margin: 50px 0 0 0;
+    z-index: 10;
+}
+
+.img-container {
+position: relative;
+width: 60px;
+}
+
+
+.img-container img {
+border-radius: 50%;
+object-fit: cover;
+height: 60px;
+width: inherit;
+position: absolute;
+bottom: 0;
+left: 0;
+animation: rotate 3s linear infinite;
+
+animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.navigation {
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 1;
+}
+
+.action-btn {
+background-color: #fff;
+border: 0;
+color: #dfdbdf;
+font-size: 20px;
+cursor: pointer;
+padding: 10px;
+margin: 0 8px;
+}
+
+.action-btn:first-child {
+    margin-left: 10px;
+}
+
+.action-btn.action-btn-big {
+color: #cdc2d0;
+font-size: 30px;
+}
+
+.action-btn:focus {
+outline: 0;
+}
+
+.music-info {
+background-color: rgba(255, 255, 255, 0.5);
+border-radius: 15px 15px 0 0;
+position: absolute;
+top: 0;
+left: 11px;
+width: calc(100% - 51px);
+padding: 10px 10px 10px 20px;
+opacity: 0;
+transform: translateY(0%);
+transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+z-index: 0;
+}
+
+.music-container.play .music-info {
+opacity: 1;
+transform: translateY(-100%);
+}
+
+.music-info h4 {
+margin: 0;
+}
+
+.progress-container {
+background: #fff;
+border-radius: 5px;
+cursor: pointer;
+margin: 10px 0;
+height: 4px;
+width: 100%;
+}
+
+.progress {
+background-color: rgb(11, 11, 104);
+border-radius: 5px;
+height: 100%;
+width: 0%;
+transition: width 0.1s linear;
+} 
