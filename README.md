@@ -17,5 +17,3 @@ This app has default bedtime at 12h a.m. The user can modify wake up time by tur
 - circle_progress_control.css: design app
 - /image: images for web page
 - /music: audio for music player
- 
-# Demo
